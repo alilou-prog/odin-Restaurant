@@ -4,10 +4,6 @@ const nav_tabs = [
     {label: "About", class: "about",},
 ]
 
-export const ui = {
-    nav_btns: [],
-}
-
 export function init_ui() {
     const header = document.createElement("header");
     const nav = document.createElement("nav");
@@ -18,10 +14,12 @@ export function init_ui() {
         btn.classList.add(tab.class);
         nav.appendChild(btn);
 
-        ui.nav_btns.push(btn);
+        nav_btns.push(btn);
     }
     header.appendChild(nav);
     const content_div = document.createElement("div");
     content_div.id = "content";
     document.body.appendChild(header);
+    document.body.appendChild(content_div);
+    return {nav_btns, content_div};
 }
