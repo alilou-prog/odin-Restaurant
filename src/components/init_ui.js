@@ -12,8 +12,8 @@ export function init_ui() {
         const btn = document.createElement("button");
         btn.textContent = tab.label;
         btn.classList.add(tab.class);
+        btn.setAttribute("data-tab", tab.class);
         nav.appendChild(btn);
-
         nav_btns.push(btn);
     }
     header.appendChild(nav);
